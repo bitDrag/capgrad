@@ -27,9 +27,18 @@ public class Student {
 //				&& Objects.equals(name, other.name) && roll == other.roll
 //				&& Float.floatToIntBits(sciMarks) == Float.floatToIntBits(other.sciMarks);
 //	}
+	
 	public float TotalMarks() {
 		return engMarks+mathMarks+sciMarks;
 	}
+	
+	@Override
+	public String toString() {
+		return "Student [roll=" + roll + ", name=" + name + ", engMarks=" + engMarks + ", mathMarks=" + mathMarks
+				+ ", sciMarks=" + sciMarks + ", TotalMarks=" + TotalMarks() + ", AvgMarks=" + AvgMarks() + "]";
+	}
+
+	
 	public float AvgMarks() {
 		return engMarks+mathMarks+sciMarks;
 	}
@@ -65,6 +74,15 @@ public class Student {
 	public void setSciMarks(float sciMarks) {
 		this.sciMarks = sciMarks;
 	}
-	
+	public static void main(String[] args) {
+		Student s=new Student();
+		s.setEngMarks(60);
+		s.setMathMarks(60);
+		s.setSciMarks(60);
+		s.setRoll(1001);
+		s.setName("Khabib");
+		System.out.println(s.toString());
+		
+	}
 	
 }
